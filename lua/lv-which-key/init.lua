@@ -129,7 +129,17 @@ local mappings = {
         R = {"<cmd>Telescope registers<cr>", "Registers"},
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
-    S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}}
+    S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}},
+
+    t = {
+        name = "+Neoterm",
+        o = {"<cmd>Toggle<cr>", "Toggle neoterm"},
+        C = {"<cmd>Tclose<cr>", "Hide"},
+        c = {"<cmd>Tclose!<cr>", "Close"},
+        s = {"<cmd>TREPLSendLine<cr>", "Send line to Neoterm"},
+        S = {"<cmd>TREPLSendSelection<cr>", "Send selection to Neoterm"},
+        f = {"<cmd>TREPLSendFile<cr>", "Send file to Neoterm"}
+    }
 }
 
 local wk = require("which-key")
