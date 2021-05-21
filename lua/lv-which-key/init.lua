@@ -50,9 +50,14 @@ vim.g.mapleader = ' '
 -- no hl
 vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
 
+-- neoterm send to line
+vim.api.nvim_set_keymap('n', '<Leader>s', ':TREPLSendLine<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<Leader>s', ':TREPLSendSelection<CR>', {noremap = true, silent = true})
+
 -- explorer
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
 
@@ -74,6 +79,7 @@ local mappings = {
     ["e"] = "Explorer",
     ["f"] = "Find File",
     ["h"] = "No Highlight",
+    ["s"] = "Sendline to neoterm",
     d = {
         name = "+Debug",
         b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
@@ -116,7 +122,7 @@ local mappings = {
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },
 
-    s = {
+    S = {
         name = "+Search",
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
@@ -129,11 +135,11 @@ local mappings = {
         R = {"<cmd>Telescope registers<cr>", "Registers"},
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
-    S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}},
+    n = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}},
 
     t = {
         name = "+Neoterm",
-        o = {"<cmd>Toggle<cr>", "Toggle neoterm"},
+        o = {"<cmd>T ipython<cr>", "Toggle neoterm"},
         C = {"<cmd>Tclose<cr>", "Hide"},
         c = {"<cmd>Tclose!<cr>", "Close"},
         s = {"<cmd>TREPLSendLine<cr>", "Send line to Neoterm"},
