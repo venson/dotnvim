@@ -139,7 +139,7 @@ local mappings = {
 
     t = {
         name = "+Neoterm",
-        o = {"<cmd>T ipython<cr>", "Toggle neoterm"},
+        o = {"<cmd>T ipython<cr>", "IPython in neoterm"},
         C = {"<cmd>Tclose<cr>", "Hide"},
         c = {"<cmd>Tclose!<cr>", "Close"},
         s = {"<cmd>TREPLSendLine<cr>", "Send line to Neoterm"},
